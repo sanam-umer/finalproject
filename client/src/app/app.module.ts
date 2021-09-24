@@ -9,6 +9,7 @@ import { ChatComponent } from './containers/chat/chat.component';
 
 
 import { UsernameComponent } from './components/username/username.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UsernameComponent } from './components/username/username.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
