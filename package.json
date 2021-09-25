@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "ng build --prod",
     "start": "server.js",
     "serve": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +19,8 @@
     "nodemon": "^2.0.12",
     "socket.io": "^4.2.0",
     "socket.io-client": "^4.2.0"
+  },
+  "devDependencies": {
+    "enhanced-resolve": "^3.3.0"
   }
 }
