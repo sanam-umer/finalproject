@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-
+const port = process.env.PORT || 3000;
 const app = express();
 const http = require('http').createServer(app);
 
@@ -47,6 +47,6 @@ function removeUser(userName, id) {
     }
 }
 
-http.listen(3000, () => {
+http.listen(port, () => {
     console.log('Server is running');
 });
