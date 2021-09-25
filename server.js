@@ -10,6 +10,9 @@ const io = require('socket.io')(http, {
     }
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello world');
+})
 
 
 let userList = new Map();
