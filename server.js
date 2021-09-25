@@ -10,9 +10,12 @@ const io = require('socket.io')(http, {
     }
 });
 
-app.get('/', (req, res) => {
-    res.send('Hello world');
-})
+app.get('/',(req,res)=>{
+    res.header('Access-Control-Allow-Origin','*');
+    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    res.send('Backend Successfull');
+});
+
 
 
 let userList = new Map();
