@@ -1,4 +1,11 @@
 const express = require('express');
+function requireHTTPS(req, res, next) {
+    // The 'x-forwarded-proto' check is for Heroku
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
+        return res.redirect('https://' + req.get('host') + req.url);
+    }
+    next();
+}
 const cors = require('cors');
 const port = process.env.PORT || 3000;
 const app = express();
@@ -11,11 +18,12 @@ const io = require('socket.io')(http, {
 });
 
 
-app.get('/',(req,res)=>{
-    res.header('Access-Control-Allow-Origin','*');
-    res.header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    res.send('Backend Successfull');
-});
+app.use(requireHTTPS);
+app.use(express.static("./dist/messenger"));
+
+app.get('/*', (req, res) =>
+    res.sendFile('index.html', {root: 'dist/messenger/'}),
+);
 
 
 
