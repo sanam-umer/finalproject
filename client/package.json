@@ -3,18 +3,21 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build --aot -prod",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.13",
+    "@angular/cli": "~9.1.15",
     "@angular/common": "~9.1.13",
     "@angular/compiler": "~9.1.13",
+    "@angular/compiler-cli": "~9.1.13",
     "@angular/core": "~9.1.13",
     "@angular/forms": "~9.1.13",
     "@angular/localize": "~9.1.13",
