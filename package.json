@@ -1,9 +1,11 @@
 {
-  "name": "chatapp",
+  "name": "messenger",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+   
+    "start": " node server.js",
     "serve": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +19,12 @@
     "nodemon": "^2.0.12",
     "socket.io": "^4.2.0",
     "socket.io-client": "^4.2.0"
+  },
+  "devDependencies": {
+    "enhanced-resolve": "^3.3.0"
+  },
+  "engine": {
+    "node": "13.14.0",
+    "npm": "6.14.4"
   }
 }

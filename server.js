@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose')
 const app = express();
+const path = require('path');
 const http = require('http').createServer(app);
 function requireHTTPS(req, res, next) {
     // The 'x-forwarded-proto' check is for Heroku
